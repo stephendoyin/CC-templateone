@@ -1,0 +1,173 @@
+// font-family: 'PT Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
+@import url("./font.css");
+html {
+  font-size: 13px;
+}
+
+@media only screen and (min-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 922px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: Gilroy, "sans-serif";
+  color: #032752;
+}
+
+.navigation {
+  height: 80px;
+  width: 100%;
+  z-index: 100;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__link {
+    margin-left: 2.5rem;
+    text-decoration: none !important;
+    color: #032752;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+}
+
+.btn {
+  border-radius: 60px;
+  min-width: 150px;
+  line-height: 30px;
+
+  &-primary {
+    background: #4159fb;
+    color: #fff !important;
+  }
+
+  &-white {
+    background: #fff;
+    color: #032752;
+  }
+}
+
+.hero {
+  background-color: #f8fbff;
+  padding: 13rem 0;
+
+  &__title {
+    font-size: 3rem;
+    font-family: "Pt sans", sans-serif;
+  }
+}
+
+.hero__dots {
+  max-width: 150px;
+  right: 0;
+  top: 115%;
+}
+
+.small-title {
+  background: #eeebff;
+  height: 50px;
+  min-width: 150px;
+  line-height: 50px;
+  font-size: 1rem;
+  color: #52dcf9;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Pt sans", sans-serif;
+
+  &--small {
+    font-size: 1.3rem;
+  }
+
+  &--bigger {
+    font-size: 3rem;
+  }
+}
+
+section {
+  padding: 6rem 0;
+}
+
+.custom-round {
+  border-radius: 8px;
+}
+
+.card {
+  &__body {
+    padding: 2rem 1.4rem;
+    border: 1px solid #b4bcfc;
+    box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08),
+      0px 24px 32px rgba(50, 50, 71, 0.08);
+  }
+
+  &__icon-container {
+    height: 60px;
+    width: 60px;
+    background: #b5f2e3;
+  }
+}
+
+.bg {
+  height: 85%;
+  width: 40%;
+  background-color: #fafbff;
+  right: 0%;
+  top: 5%;
+  border-radius: 24px 0 0 24px;
+
+  &--left {
+    left: 0;
+    right: unset;
+    border-radius: 0 24px 24px 0;
+  }
+
+  &__section {
+    background-color: #fafbff;
+  }
+}
+
+.strip__section {
+  background: url(../assets/images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0 !important;
+}
+
+.footer {
+  padding: 5rem 0;
+
+  &__link {
+    margin-left: 2rem;
+    display: inline-block;
+    color: #032752;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .box__item {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
