@@ -2,6 +2,7 @@
 @import url("./font.css");
 html {
   font-size: 13px;
+  scroll-behavior: smooth;
 }
 
 @media only screen and (min-width: 767px) {
@@ -22,12 +23,17 @@ body {
 }
 
 .navigation {
-  height: 80px;
+  height: 70px;
   width: 100%;
   z-index: 100;
   position: relative;
   top: 0;
   left: 0;
+  background: #fff;
+}
+
+.navigation.open {
+  background: #fff;
 }
 
 .navigation__inner {
@@ -38,14 +44,116 @@ body {
   margin-left: 2.5rem;
   text-decoration: none !important;
   color: #032752;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
+}
+
+.navigation__link:hover {
+  color: #032752;
+}
+
+.navigation__mobile {
+  width: 100%;
+  top: 70px;
+  left: 0;
+  height: 0px;
+  -webkit-transition: height 0.3s linear;
+  transition: height 0.3s linear;
+  overflow: hidden;
+}
+
+.navigation__mobile__link {
+  text-decoration: none !important;
+  line-height: 70px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  color: #032752;
+}
+
+.navigation .menu-btn {
+  height: 27px;
+  width: 46px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.navigation .menu-btn span {
+  width: 100%;
+  height: 3px;
+  background: #032752;
+  display: block;
+}
+
+.navigation .menu-btn span:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.navigation .menu-btn span:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: width 0.3s linear;
+  transition: width 0.3s linear;
+}
+
+.navigation .menu-btn span:last-child {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.navigation.open .menu-btn span {
+  background: #222335;
+}
+
+.navigation.open .menu-btn span:first-child {
+  top: 42%;
+  -webkit-transform: rotate(-315deg) translateY(-50%);
+          transform: rotate(-315deg) translateY(-50%);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.navigation.open .menu-btn span:nth-child(2) {
+  width: 0% !important;
+}
+
+.navigation.open .menu-btn span:last-child {
+  bottom: 46%;
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+          transform: rotate(-45deg) translateY(-50%);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.navigation.open .navigation__mobile {
+  height: 370px;
+  overflow: auto;
 }
 
 .btn {
   border-radius: 60px;
   min-width: 150px;
   line-height: 30px;
+  font-weight: 600;
 }
 
 .btn-primary {
@@ -117,6 +225,7 @@ section {
   border: 1px solid #b4bcfc;
   -webkit-box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
           box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08), 0px 24px 32px rgba(50, 50, 71, 0.08);
+  height: 100%;
 }
 
 .card__icon-container {
@@ -141,14 +250,14 @@ section {
 }
 
 .bg__section {
-  background-color: #fafbff;
+  background-color: #d9d9e1;
 }
 
 .strip__section {
   background: url(../assets/images/bg.jpg);
   background-size: cover;
   background-position: center;
-  padding: 4rem 0 !important;
+  padding: 2rem 0 !important;
 }
 
 .footer {
